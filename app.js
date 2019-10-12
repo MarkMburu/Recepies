@@ -22,7 +22,7 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     next();
   });
-  
+
 
 app.post('/api/recipes',(req,res)=>{
     const recipe = new Recipe({
@@ -80,8 +80,8 @@ app.get('/api/recipes/:id',(req,res)=>{
     Recipe.findOne({
         _id: req.params.id,
     })
-    .then((thing)=>{
-        res.status(200).json(thing);
+    .then((recipe)=>{
+        res.status(200).json(recipe);
     })
     .catch((error)=>{
         res.status(400).json({
