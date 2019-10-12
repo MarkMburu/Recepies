@@ -95,7 +95,6 @@ app.get('/api/recipes/:id',(req,res)=>{
 
 app.get('/api/recipes',(req,res)=>{
     Recipe.find().then((recipes)=>{
-        console.log(recipes)
        res.status(200).json(recipes)
     })
     .catch((error)=>{
